@@ -43,7 +43,7 @@ int main() {
   return 1;
  }
 
- FITNESS_DATA data[1000];  // assuming there are at most 1000 records
+ FITNESS_DATA data[1000];  // most 1000 records
  char line[256];
  int count = 0;
 
