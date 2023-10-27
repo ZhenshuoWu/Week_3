@@ -38,19 +38,21 @@ void tokeniseRecord(const char *input, const char *delimiter,
 // Complete the main function
 int main() {
  FILE* file = fopen("FitnessData_2023.csv", "r");
+ //上课内容
  if (file == NULL) {
   printf("Could not open file\n");
   return 1;
  }
 
- FITNESS_DATA data[1000];  // most 1000 records
- char line[256];
+ FITNESS_DATA data[999];  
+ // most 999 records
+ char line[199];
  int count = 0;
 
- while (fgets(line, sizeof(line), file)) {
+ while (fgets(line, 199, file)) {
   char date[11], time[6], steps[10];
   tokeniseRecord(line, ",", date, time, steps);
-
+//
   strcpy(data[count].date, date);
   strcpy(data[count].time, time);
   data[count].steps = atoi(steps);
